@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Testing</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;  
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #0000AA;
+            flex-direction: column;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+
+        .timeline-container {
+            position: relative;
+            width: 1600px; /* Adjust container width */
+            height: 600px; /* Adjust based on your content */
+        }
+
+
+        .timeline {
+            position: absolute;
+            left: 0;
+            width: 5px;
+            height: 0; /* Start with 0 height for animation */
+            background-color: white;
+            animation: extendLine 2s ease-out forwards;
+        }
+
+
+
+        @keyframes extendLine {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 100%;
+            }
+        }
+
+        .timeline-item {
+            position: absolute;
+            text-align: left;
+            padding: 50px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            }
+
+        
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Documentation Testing</h1>
+    <div class="timeline-container" style="justify-content: center;">
+        <!-- Central Line --><br><br><br><br>
+        <div class="timeline"></div>
+        <!-- Timeline Items -->
+        
+        <div class="timeline-item"><b>Scenario:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis repellendus, laboriosam mollitia, nihil temporibus aspernatur quasi, consequatur odio officiis animi nemo ducimus esse cum. Odio voluptate sed unde ullam!</div><br><br><br><br><br>
+        <div class="timeline-item"><b>Pass Condition:</b> The user can access only their permitted resources and cannot access admin or restricted areas.</div><br><br><br><br>
+        <div class="timeline-item"><b>Fail Condition:</b> The user is able to access restricted areas or perfrom actions they are not authorized for.</div><br><br><br><br>
+        <div class="timeline-item"><b>Technique:</b> UAT (Functionality).</div><br><br><br><br>
+        <div class="timeline-item"><b>Tools:</b> Google Forms (UAT), manual testing.</div><br><br><br><br>
+        <div class="timeline-item"><b>Actual Result:</b> TBO.</div><br><br><br><br>
+        <div class="timeline-item"><b>Final Say:</b> TBO.</div>
+
+    </div>
+    
+</body>
+</html>

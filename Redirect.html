@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualys WAS Test Cases</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 1em auto;
+            padding: 1em;
+            background-color: #000080;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .feature-list ol {
+            padding-left: 20px;
+        }
+
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+        }
+
+        input {
+            font-size: 1em;
+            margin-top: 1em;
+            padding: 0.5em;
+            border: 2px solid #FFFFFF;
+            border-radius: 5px;
+            background-color: #000080;
+            color: #FFFFFF;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .result {
+            margin-top: 2em;
+            padding: 1em;
+            background-color: #000080;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>System Error Detected</h1>
+        <p>Welcome to the Qualys WAS Test Case Viewer</p>
+        <p>Prepared by Ahmed Al Shaqsi, Ammar Al Moosawi, and Abu Bakr Al Azizi</p>
+        <p>In collaboration with Oman Data Park</p>
+
+        <div class="feature-list">
+            <p>Enter the corresponding number to view test cases for the desired feature:</p>
+            <ol>
+                <li>Web Application Scanning Configuration</li>
+                <li>Vulnerability Detection</li>
+                <li>Reporting Capabilities</li>
+                <li>User Access and Permissions</li>
+                <li>Integration with Other Tools</li>
+            </ol>
+        </div>
+
+        <label for="featureInput">Enter number: </label>
+        <input 
+            type="number" 
+            id="featureInput" 
+            name="featureInput" 
+            min="1" 
+            max="5" 
+            placeholder="1-5" 
+            oninput="showMessage(event)">
+        
+        <div id="result" class="result" style="display: none;"></div>
+
+        <footer>
+            <p>Press Enter to continue...</p>
+        </footer>
+    </div>
+
+    <script>
+        function showMessage(event) {
+            const input = event.target.value;
+            const result = document.getElementById('result');
+            let message = '';
+
+            if (input === '1') {
+                message = 'Viewing test cases for Web Application Scanning Configuration.';
+            } else if (input === '2') {
+                message = 'Viewing test cases for Vulnerability Detection.';
+            } else if (input === '3') {
+                message = 'Viewing test cases for Reporting Capabilities.';
+            } else if (input === '4') {
+                message = 'Viewing test cases for User Access and Permissions.';
+            } else if (input === '5') {
+                message = 'Viewing test cases for Integration with Other Tools.';
+            } else {
+                message = 'Invalid input. Please enter a number between 1 and 5.';
+            }
+
+            result.textContent = message;
+            result.style.display = 'block';
+        }
+
+        function handleEnterKey(event) {
+            if (event.key === 'Enter') {
+                const inputElement = document.getElementById('featureInput');
+                const inputValue = inputElement.value;
+
+                if (inputValue === '1') {
+                    window.open('WebAppScanning.html', '_blank');
+                } else if (inputValue === '2') {
+                    window.open('VulnerabilityDetection.html', '_blank');
+                } else if (inputValue === '3') {
+                    window.open('ReportingCapabilities.html', '_blank');
+                } else if (inputValue === '4') {
+                    window.open('AccessPerm.html', '_blank');
+                } else if (inputValue === '5') {
+                    window.open('Integration.html', '_blank');
+                } else {
+                    alert('Please enter a valid number between 1 and 5.');
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleEnterKey);
+    </script>
+</body>
+</html>

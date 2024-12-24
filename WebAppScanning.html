@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Scanning Configuration</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 1em auto;
+            padding: 1em;
+            background-color: #000080;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .feature-list ol {
+            padding-left: 20px;
+        }
+
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+        }
+
+        input {
+            font-size: 1em;
+            margin-top: 1em;
+            padding: 0.5em;
+            border: 2px solid #FFFFFF;
+            border-radius: 5px;
+            background-color: #000080;
+            color: #FFFFFF;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .result {
+            margin-top: 2em;
+            padding: 1em;
+            background-color: #000080;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Application Scanning Configuration</h1>
+
+        <div class="feature-list">
+            <p>Enter the corresponding WASC code to view User Access and Permissions:</p>
+            <ul>
+                <li>WASC001: Validate Basic Configuration of Web Application Scan.</li>
+                <li>WASC002: Validate Advanced Configuration with Authentication.</li>
+                <li>WASC003: Validate Scheduled Scanning Configuration.</li>
+                <li>WASC004: Validate Documentation for Full Scan Configuration.</li>
+                <li>WASC005: Validate Documentation for Custom Scan Configuration .</li>
+            </ul>
+        </div>
+
+        <label for="featureInput">Enter code: </label>
+        <input 
+            type="text" 
+            id="featureInput" 
+            name="featureInput" 
+            placeholder="Enter code..." 
+            oninput="showMessage(event)">
+        
+        <div id="result" class="result" style="display: none;"></div>
+
+        <footer>
+            <p>Press Enter to continue...</p>
+        </footer>
+    </div>
+
+    <script>
+        function showMessage(event) {
+            const input = event.target.value;
+            const result = document.getElementById('result');
+            let message = '';
+
+            if (input === 'WASC001') {
+                message = 'Validate Basic Configuration of Web Application Scan.';
+            } else if (input === 'WASC002') {
+                message = 'Validate Advanced Configuration with Authentication.';
+            } else if (input === 'WASC003') {
+                message = 'Validate Scheduled Scanning Configuration.';
+            } else if (input === 'WASC004') {
+                message = 'Validate Documentation for Scan Configuration.';
+            } else if (input === 'WASC005') {
+                message = 'Validate that the Qualys WAS Documentation.';
+            } else {
+                message = 'Invalid input. Please enter a valid code (e.g., UAT001).';
+            }
+
+            result.textContent = message;
+            result.style.display = 'block';
+        }
+
+        function handleEnterKey(event) {
+            if (event.key === 'Enter') {
+                const inputElement = document.getElementById('featureInput');
+                const inputValue = inputElement.value;
+
+                if (inputValue === 'WASC005') {
+                    window.open('WASC005.html', '_blank');
+                } else {
+                    alert('Please enter a valid code (e.g., UAT001).');
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleEnterKey);
+    </script>
+</body>
+</html>

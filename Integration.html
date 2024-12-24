@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration with Other Tools</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin: 1em auto;
+            padding: 1em;
+            background-color: #000080;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .feature-list ol {
+            padding-left: 20px;
+        }
+
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+        }
+
+        input {
+            font-size: 1em;
+            margin-top: 1em;
+            padding: 0.5em;
+            border: 2px solid #FFFFFF;
+            border-radius: 5px;
+            background-color: #000080;
+            color: #FFFFFF;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFD700;
+        }
+
+        .result {
+            margin-top: 2em;
+            padding: 1em;
+            background-color: #000080;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Integration with Other Tools</h1>
+
+        <div class="feature-list">
+            <p>Enter the corresponding code to view User Access and Permissions:</p>
+            <ul>
+                <li>IT001: Validate Integration with SIEM (Splunk).</li>
+                <li>IT002: Validate API Integration for Data Export.</li>
+                <li>IT003: Validate Data Integrity and Confidentiality in Data Flow.</li>
+                <li>IT004: Validate Synchronization of Vulnerabilities in Third-Party Systems.</li>
+            </ul>
+        </div>
+
+        <label for="featureInput">Enter code: </label>
+        <input 
+            type="text" 
+            id="featureInput" 
+            name="featureInput" 
+            placeholder="Enter code..." 
+            oninput="showMessage(event)">
+        
+        <div id="result" class="result" style="display: none;"></div>
+
+        <footer>
+            <p>Press Enter to continue...</p>
+        </footer>
+    </div>
+
+    <script>
+        function showMessage(event) {
+            const input = event.target.value;
+            const result = document.getElementById('result');
+            let message = '';
+
+            if (input === 'IT001') {
+                message = 'Validate Integration with SIEM (Splunk).';
+            } else if (input === 'IT002') {
+                message = 'Validate API Integration for Data Export.';
+            } else if (input === 'IT003') {
+                message = 'Validate Data Integrity and Confidentiality in Data Flow.';
+            } else if (input === 'IT004') {
+                message = 'Validate Synchronization of Vulnerabilities in Third-Party Systems.';
+            } else {
+                message = 'Invalid input. Please enter a valid code (e.g., UAT001).';
+            }
+
+            result.textContent = message;
+            result.style.display = 'block';
+        }
+
+        function handleEnterKey(event) {
+            if (event.key === 'Enter') {
+                const inputElement = document.getElementById('featureInput');
+                const inputValue = inputElement.value;
+
+                if (inputValue === 'IT001') {
+                    window.open('IT001.html', '_blank');
+                } else {
+                    alert('Please enter a valid code (e.g., IT001).');
+                }
+            }
+        }
+
+        document.addEventListener('keydown', handleEnterKey);
+    </script>
+</body>
+</html>

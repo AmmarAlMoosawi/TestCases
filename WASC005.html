@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Testing</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #0000AA;
+            flex-direction: column;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+
+        .timeline-container {
+            position: relative;
+            width: 1600px; /* Adjust container width */
+            height: 600px; /* Adjust based on your content */
+        }
+
+
+        .timeline {
+            position: absolute;
+            left: 0;
+            width: 5px;
+            height: 0; /* Start with 0 height for animation */
+            background-color: white;
+            animation: extendLine 2s ease-out forwards;
+        }
+
+
+
+        @keyframes extendLine {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 100%;
+            }
+        }
+
+        .timeline-item {
+            
+            text-align: left;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            }
+
+        
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Documentation Testing</h1>
+    <div class="timeline-container" style="justify-content: center;">
+        <!-- Central Line -->
+        <div class="timeline"></div>
+        <!-- Timeline Items -->
+        
+        <div class="timeline-item"><b>Scenario:</b> Validate that the Qualys WAS Documentation clearly explains how to configure scan parameters, which include authentication, timeouts, and request throttling.</div>
+        <div class="timeline-item"><b>Objective:</b> Ensure users can follow the documentation to correctly configure scan parameters in Qualys WAS, including advanced options like token-based authentication, timeout settings, and request throttling.</div>
+        <div class="timeline-item"><b>Prerequisites:</b> Access to Qualys WAS documentation, administrator rights to Qualys WAS and a staging web application for testing configurations.</div>
+        <div class="timeline-item"><b>Test Data:</b> <br>
+            - Authentication Type: Token-based (e.g., API key: aa3z5926134w, eh485mwwnr4). <br>
+            - Timeout: 300 seconds. <br>
+            - Request Throttling: 10 requests/second.
+        </div>
+        <div class="timeline-item"><b>Pass Criteria:</b> <br>
+        - Documentation is complete, clear, and provides detailed steps for scan parameter configurations. <br>
+        - Scans timeout and request throttling set to the required 300 seconds and 10 requests/second. <br>
+        - Visual aids and examples align with the Qualys WAS interface. <br>
+        - Troubleshooting steps for common configuration issues are included. <br>
+        - Valid API key used for token authentication.
+        </div>
+        <div class="timeline-item"><b>Fail Criteria:</b> <br>
+            - Documentation lacks clarity, leaves out important details, or includes steps that do not match the actual interface. <br>
+            - No troubleshooting guidance for parameter configuration issues like authentication failures or unsupported values. <br>
+            - Scan timeouts and request throttling not set as required. <br>
+            - Invalid API key for token authentication.
+            
+        </div>
+        <div class="timeline-item"><b>Steps:</b> <br>
+        1. Open the Qualys WAS documentation and locate the scan parameter configuration section. <br>
+        2. Use the documentation to configure token-based authentication with the example API key (aa3z5926134w, eh485mwwnr4). <br>
+        3. Follow instructions to set the scan timeout to 300 seconds. <br>
+        4. Adjust the request throttling to 10 requests/second based on documentation guidance. <br>
+        6. Check the troubleshooting section for guidance on resolving common parameter configuration errors (e.g., invalid API key, timeout too low). <br>
+        7. Validate that the documentation includes screenshots or diagrams demonstrating the parameter configuration process.        
+        </div>
+        <div class="timeline-item"><b>Checklists:</b> <br>
+            - Clarity: Are the instructions for parameter configuration clear and logical? <br>
+            - Completeness: Are all scan parameter options (authentication, timeouts, throttling) included? <br>
+            - Troubleshooting: Are issues like authentication failures or invalid values addressed with required solutions? <br>
+            - Visual Aids: Are there relevant screenshots or diagrams for parameter configuration? <br>
+            - Consistency: Does the documentation terminology match the Qualys WAS interface?
+        </div>
+
+        <div class="timeline-item"><b>Expected Results:</b> <br> 
+            - Documentation includes step-by-step instructions for all scan parameter configurations. <br> 
+            - Token-based authentication, timeout and request throttling clearly defined and explain. <br> 
+            - Users can configure the parameters without requiring external support. <br> 
+        </div>
+        <div class="timeline-item"><b>Actual Results:</b> <br> 
+            - API key used: aa3z5926134w. <br> 
+            - Scan timeout set: 300 seconds. <br> 
+            - Request throttling set: 10 requests/second. <br> 
+            - Screenshots and diagrams displayed for the parameter configuration.  <br> 
+            - Troubleshooting guidance well defined and explained for cases of incorrect values and failed authentication. <br> 
+            - Documentation meets checklist. <br> 
+            - Steps 1 - 7 included in documentation.
+        </div>
+        <div class="timeline-item"><b>Final Say:</b> The documentation meets all the required criteria set. It uses a valid authentication key and follows the checklist and includes the correct scan parameters, troubleshooting guidelines and visual aids. 
+        
+        
+        
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

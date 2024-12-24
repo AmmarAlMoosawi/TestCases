@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Integration with SIEM (Splunk)</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #0000AA;
+            flex-direction: column;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+
+        .timeline-container {
+            position: relative;
+            width: 1600px; /* Adjust container width */
+            height: 600px; /* Adjust based on your content */
+        }
+
+
+        .timeline {
+            position: absolute;
+            left: 0;
+            width: 5px;
+            height: 0; /* Start with 0 height for animation */
+            background-color: white;
+            animation: extendLine 2s ease-out forwards;
+        }
+
+
+
+        @keyframes extendLine {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 100%;
+            }
+        }
+
+        .timeline-item {
+            
+            text-align: left;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            }
+
+        
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Validate Integration with SIEM (Splunk)</h1>
+    <div class="timeline-container" style="justify-content: center;">
+        <!-- Central Line -->
+        <div class="timeline"></div>
+        <!-- Timeline Items -->
+        <div class="timeline-item"><b>Scenario:</b> The web application is preconfigured with vulnerabilities such as SQL Injection, Cross-Site Scripting (XSS), and Log4j RCE. A scan is performed in Qualys WAS, and the results are exported to Splunk for further analysis. The test ensures that vulnerability details, risk levels, and affected endpoints are correctly mapped into Splunk's dashboard without data loss or misalignment.</div><br><br><br><br><br>
+        <div class="timeline-item"><b>Pass Condition:</b> The vulnerability data (e.g., SQL Injection at /login, XSS at /comments, Log4j RCE at /logs) is accurately imported into Splunk, with no data loss, misclassification, or discrepancies in endpoint mapping.</div><br><br><br><br>
+        <div class="timeline-item"><b>Fail Condition:</b> Data is incomplete, misaligned, or incorrectly classified in Splunk. Vulnerabilities are missing, or risk levels are incorrectly mapped.</div><br><br><br><br>
+        <div class="timeline-item"><b>Technique:</b> Integration Testing.</div><br><br><br><br>
+        <div class="timeline-item"><b>Tools:</b> Splunk (for SIEM), Postman (for API Testing), Burp Suite, OWASP ZAP (for Security Testing).</div><br><br><br><br>
+        <div class="timeline-item"><b>Actual Result:</b> Qualys WAS exports data accurately with no loss or misclassification to Splunk.</div><br><br><br><br>
+        <div class="timeline-item"><b>Final Say:</b> Qualys WAS can be successfully integrated with one of the SIEM tools, Splunk.</div>
+
+        
+        
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

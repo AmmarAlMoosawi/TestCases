@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0000AA;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .blue-screen {
+            text-align: center;
+            margin-top: 20vh;
+        }
+
+        .blue-screen h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .blue-screen p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .blink {
+            animation: blink-animation 1s steps(2, start) infinite;
+            -webkit-animation: blink-animation 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        /* Countdown timer style */
+        #countdown {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-screen">
+        <h1>:( Your PC ran into a problem</h1>
+        <p>A problem has been detected and the system has been shut down to prevent damage.</p>
+        <p>Technical Information:</p>
+        <p>*** STOP: 0x000000F4 (0x00000003, 0x00000000, 0xFFFFFA8004A8B510, 0xFFFFF8000318D510)</p>
+        <p>Collecting crash dump... 15%</p>
+        <p>If this is the first time you've seen this error screen, restart your computer. If this screen appears again, follow these steps:</p>
+        <p>- Check to make sure any new hardware or software is properly installed.</p>
+        <p>- If problems continue, disable or remove any newly installed hardware or software.</p>
+        <p>- Disable BIOS memory options such as caching or shadowing.</p>
+        <p>For advanced options, contact your system administrator.</p>
+        <p class="blink">_</p>
+    </div>
+
+    <div id="countdown">Redirecting in 5 seconds...</div>
+
+    <script>
+        // Countdown function
+        let countdownTime = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(() => {
+            countdownElement.textContent = `Redirecting in ${countdownTime} seconds...`;
+            countdownTime--;
+
+            if (countdownTime < 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "Redirect.html"; // Replace with the URL you want to redirect to
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
